@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parent
 DB_PATH = Path(os.getenv("DATABASE_PATH", str(ROOT / "data" / "impactgrid.db")))
 DB_PATH.parent.mkdir(parents=True, exist_ok=True)
 app = FastAPI(title="ImpactGrid API", version="1.0.0")
-app.mount("/static", StaticFiles(directory=ROOT / "static"), name="static")
+#app.mount("/static", StaticFiles(directory=ROOT / "static"), name="static")
 
 def db():
     conn = sqlite3.connect(DB_PATH)
